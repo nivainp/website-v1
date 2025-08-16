@@ -53,7 +53,8 @@
     .chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
     .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);color:#fff;font-weight:600;font-size:.9rem}
 
-    .divider{height:1px;margin:42px 0;background:linear-gradient(90deg,transparent,var(--aqua),var(--brand),transparent);filter:drop-shadow(0 3px 8px rgba(55,200,255,.35))}
+    .divider{height:1px;margin:42px 0;background:linear-gradient(90deg,transparent,var(--aqua),var(--brand),transparent);filter:drop-shadow(0 3px 8px rgba(55,200,255,.35));opacity:0;transform:scaleX(0);transform-origin:center;transition:opacity .8s ease, transform .8s ease}
+    .divider.in{opacity:1;transform:scaleX(1)}
 
     .cards{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:18px}
     .cards.even-6{grid-template-columns:repeat(3,1fr)}
@@ -193,7 +194,7 @@
     document.getElementById('y').textContent = new Date().getFullYear();
     document.body.classList.add('js');
     try {
-      const items = document.querySelectorAll('.reveal');
+      const items = document.querySelectorAll('.reveal, .divider');
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
       }, {rootMargin:'0px 0px -10% 0px', threshold:.1});
