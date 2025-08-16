@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INSIGHTPOWER</title>
+  <meta name="description" content="INSIGHTPOWER provides consulting, software development, business intelligence and NEM services for Australia’s energy industry." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0f1a; --ink:#eaf1ff; --muted:#a7b6d6;
+      --brand:#ff7b00; --brand2:#ffb703; --aqua:#37c8ff; --rose:#ff6f91;
+      --line:rgba(255,255,255,.12); --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden;position:relative}
+
+    .energy-bg {
+      position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:radial-gradient(circle at 20% 30%, rgba(255,123,0,0.12), transparent 50%),
+                 radial-gradient(circle at 80% 20%, rgba(55,200,255,0.12), transparent 50%),
+                 radial-gradient(circle at 40% 80%, rgba(255,111,145,0.12), transparent 50%),
+                 var(--bg);
+      background-size:200% 200%;
+      animation:energyFlow 60s ease infinite;
+    }
+    @keyframes energyFlow {
+      0% {background-position:0% 0%,100% 0%,0% 100%}
+      50% {background-position:50% 50%,50% 50%,50% 50%}
+      100% {background-position:0% 0%,100% 0%,0% 100%}
+    }
+
+    main{position:relative;z-index:1}
+    section{max-width:1180px;margin:0 auto;padding:84px 20px}
+
+    .kicker{letter-spacing:.15em;text-transform:uppercase;color:var(--brand);font-weight:800;font-size:.82rem}
+    h1,h2,h3{margin:0 0 12px;line-height:1.15}
+    h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;background:linear-gradient(90deg,var(--brand),var(--rose),var(--aqua));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--aqua)}
+    h3{font-size:1.1rem;font-weight:700}
+    p{margin:0 0 12px;color:var(--muted)}
+
+    .hero{padding-top:120px;display:grid;gap:18px;justify-items:center;text-align:center}
+    .hero .lede{max-width:900px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+    .btn{display:inline-block;padding:14px 20px;border-radius:14px;font-weight:800;text-decoration:none;transition:transform .18s ease, box-shadow .24s ease}
+    .btn-primary{color:#0b1018;background:linear-gradient(90deg,var(--brand),var(--brand2));box-shadow:0 10px 22px rgba(255,123,0,.25)}
+    .btn-ghost{color:var(--ink);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line)}
+    .btn:hover{transform:translateY(-3px)}
+
+    .chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);color:#fff;font-weight:600;font-size:.9rem}
+
+    .divider{height:1px;margin:42px 0;background:linear-gradient(90deg,transparent,var(--aqua),var(--brand),transparent);filter:drop-shadow(0 3px 8px rgba(55,200,255,.35))}
+
+    .cards{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:18px}
+    .cards.even-6{grid-template-columns:repeat(3,1fr)}
+    @media(max-width:900px){.cards.even-6{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.cards.even-6{grid-template-columns:1fr}}
+
+    .card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);padding:22px;backdrop-filter:blur(8px);box-shadow:var(--shadow);transition:transform .2s ease}
+    .card:hover{transform:translateY(-4px)}
+
+    .highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:22px}
+    .highlight{padding:24px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);text-align:center;font-weight:700;font-size:1.2rem;box-shadow:var(--shadow);transition:transform .25s ease}
+    .highlight span{display:block;font-size:2rem;font-weight:800;margin-bottom:6px;background:linear-gradient(90deg,var(--brand),var(--aqua));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .highlight:hover{transform:translateY(-6px)}
+
+    .panel{background:linear-gradient(160deg,rgba(18,26,43,.92),rgba(22,30,49,.92));border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+
+    .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+    a{color:var(--ink); text-underline-offset:2px}
+    .card ul{margin:0;padding-left:1.15rem}
+    .card li{margin:6px 0}
+    form{display:grid;gap:12px}
+    label{display:flex;flex-direction:column;gap:6px;font-weight:600}
+    input,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.05);color:var(--ink);font:inherit}
+    textarea{min-height:130px;resize:vertical}
+
+    footer{text-align:center;padding:30px;color:var(--muted);font-size:.9rem}
+
+    .reveal{opacity:1;transform:none}
+    body.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+    body.js .reveal.in{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <div class="energy-bg" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero">
+      <span class="kicker reveal">Australian Energy Industry</span>
+      <h1 class="reveal" style="transition-delay:.06s">INSIGHTPOWER</h1>
+      <p class="lede reveal" style="transition-delay:.12s">Since 2003 we’ve helped market operators, retailers, wholesalers and generators solve data‑intensive problems with consulting, business analysis, software development, business intelligence, database technologies and information portals.</p>
+      <div class="cta reveal" style="transition-delay:.18s">
+        <a href="#contact" class="btn btn-primary">Talk to us</a>
+        <a href="#services" class="btn btn-ghost">See what we do</a>
+      </div>
+      <div class="chips reveal" style="transition-delay:.24s">
+        <span class="chip">Since 2003</span>
+        <span class="chip">NEM focus</span>
+        <span class="chip">Consulting → Delivery</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="services">
+      <span class="kicker reveal">Services & Solutions</span>
+      <h2 class="reveal" style="transition-delay:.06s">Built for the National Electricity Market (NEM)</h2>
+      <p class="reveal" style="transition-delay:.1s">Our services are designed for Australian energy market participants and data‑rich operations: focused on business process, real benefits, innovation, cost effectiveness and end‑user satisfaction.</p>
+      <div class="cards even-6" style="margin-top:18px">
+        <article class="card reveal" style="transition-delay:.06s"><h3>Consulting & Business Analysis</h3><p>Capture accurate requirements, design change strategies and de‑risk delivery through clear documentation and planning.</p></article>
+        <article class="card reveal" style="transition-delay:.1s"><h3>Software Development</h3><p>Modern engineering practices to implement robust systems for market data, settlements and operations.</p></article>
+        <article class="card reveal" style="transition-delay:.14s"><h3>Business Intelligence</h3><p>Dashboards and analytics that surface insights from large energy datasets to inform rapid decisions.</p></article>
+        <article class="card reveal" style="transition-delay:.18s"><h3>Database Technologies</h3><p>Design, performance tuning and data interchange for mission‑critical platforms.</p></article>
+        <article class="card reveal" style="transition-delay:.22s"><h3>Information Portals</h3><p>Secure, user‑friendly portals for participants and stakeholders to access market information.</p></article>
+        <article class="card reveal" style="transition-delay:.26s"><h3>NEM Services</h3><p>Specialist capabilities for Australian National Electricity Market workflows and integration.</p></article>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <span class="kicker reveal">Why Insightpower</span>
+      <h2 class="reveal" style="transition-delay:.06s">Careful planning, clear communication, quality delivery</h2>
+      <div class="highlights">
+        <div class="highlight reveal" style="transition-delay:.08s">
+          <span>20+ years</span>
+          In Australia’s energy market
+        </div>
+        <div class="highlight reveal" style="transition-delay:.12s">
+          <span>End‑to‑end</span>
+          Analysis → software → support
+        </div>
+        <div class="highlight reveal" style="transition-delay:.16s">
+          <span>Trusted</span>
+          By operators, retailers, generators
+        </div>
+      </div>
+      <div class="cards" style="margin-top:32px">
+        <article class="card reveal"><p>We believe successful software projects come from close collaboration and disciplined delivery. Our process covers requirements, documentation, risk management, change management, solution development and testing using best‑practice software engineering and project management.</p></article>
+        <article class="card reveal" style="transition-delay:.06s"><ul><li>Established 2003, focused on Australia’s energy industry</li><li>Deep experience across dispatch interfaces, billing & settlements, metering data and more</li><li>End‑to‑end capability from analysis to production support</li></ul></article>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact">
+      <span class="kicker reveal">Contact</span>
+      <h2 class="reveal" style="transition-delay:.06s">Let’s discuss your project</h2>
+      <div class="contact-grid" style="margin-top:12px">
+        <div class="panel reveal">
+          <p><strong>Phone:</strong> <a href="tel:+61395450946">+61 3 9545 0946</a></p>
+          <p><strong>Email:</strong> <a href="mailto:nemservices@insightpower.com.au">nemservices@insightpower.com.au</a></p>
+          <p class="muted"><strong>Business Details</strong><br>INSIGHTPOWER Pty Ltd · ABN 84 144 527 686 · ACN 144 527 686<br>62 Herriotts Boulevard, Glen Waverley VIC 3150, Australia</p>
+        </div>
+        <div class="panel reveal" style="transition-delay:.06s">
+          <form action="mailto:nemservices@insightpower.com.au" method="post" enctype="text/plain">
+            <label>Name<input type="text" name="name" required></label>
+            <label>Email<input type="email" name="email" required></label>
+            <label>Company<input type="text" name="company"></label>
+            <label>Message<textarea name="message"></textarea></label>
+            <button class="btn btn-primary" type="submit">Send enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer style="text-align:center;padding:36px 20px;color:var(--muted)">© <span id="y"></span> INSIGHTPOWER Pty Ltd.</footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.body.classList.add('js');
+    try {
+      const items = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+      }, {rootMargin:'0px 0px -10% 0px', threshold:.1});
+      items.forEach(el=>io.observe(el));
+    } catch(err){
+      document.body.classList.remove('js');
+    }
+  </script>
+</body>
+</html>
