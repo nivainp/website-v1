@@ -95,6 +95,12 @@
     @media(max-width:600px){
       .highlights{grid-template-columns:1fr}
     }
+
+    /* New rule for the two-col cards under Why Insightpower */
+    .cards.two-col { grid-template-columns: 1fr 1fr; }
+    @media(max-width:980px){
+      .cards.two-col { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -151,7 +157,7 @@
           By operators, retailers, generators
         </div>
       </div>
-      <div class="cards" style="margin-top:32px; grid-template-columns:1fr 1fr;">
+      <div class="cards two-col" style="margin-top:32px">
         <article class="card reveal"><p>We believe successful software projects come from close collaboration and disciplined delivery. Our process covers requirements, documentation, risk management, change management, solution development and testing using best‑practice software engineering and project management.</p></article>
         <article class="card reveal" style="transition-delay:.06s"><ul><li>Established 2003, focused on Australia’s energy industry</li><li>Deep experience across dispatch interfaces, billing & settlements, metering data and more</li><li>End‑to‑end capability from analysis to production support</li></ul></article>
       </div>
