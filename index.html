@@ -35,7 +35,6 @@
     main{position:relative;z-index:1}
     section{max-width:1180px;margin:0 auto;padding:84px 20px}
 
-    .kicker{letter-spacing:.15em;text-transform:uppercase;color:var(--brand);font-weight:800;font-size:.82rem}
     h1,h2,h3{margin:0 0 12px;line-height:1.15}
     h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;background:linear-gradient(90deg,var(--brand),var(--rose),var(--aqua));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;overflow:hidden;white-space:nowrap;border-right:.12em solid transparent}
     h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--aqua)}
@@ -49,6 +48,20 @@
     .btn-primary{color:#0b1018;background:linear-gradient(90deg,var(--brand),var(--brand2));box-shadow:0 10px 22px rgba(255,123,0,.25)}
     .btn-ghost{color:var(--ink);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line)}
     .btn:hover{transform:translateY(-3px)}
+
+    .logo {
+      max-width: 220px;
+      margin-bottom: 0;
+      animation: logoZoomIn 1.2s ease-out;
+    }
+    @media(min-width: 1024px){
+      .logo { max-width: 260px; }
+    }
+
+    @keyframes logoZoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
 
     .chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
     .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);color:#fff;font-weight:600;font-size:.9rem}
@@ -109,9 +122,9 @@
 
   <main>
     <section class="hero">
-      <span class="kicker reveal">Australian Energy Industry</span>
+      <img src="logo.png" alt="Insightpower Logo" class="logo" />
       <h1 id="title">INSIGHTPOWER</h1>
-      <p class="lede reveal" style="transition-delay:.12s">Since 2003 we’ve helped market operators, retailers, wholesalers and generators solve data‑intensive problems with consulting, business analysis, software development, business intelligence, database technologies and information portals.</p>
+      <p class="lede reveal" style="transition-delay:.12s">Since 2003 we’ve helped market operators, retailers, wholesalers and generators solve data-intensive problems with consulting, business analysis, software development, business intelligence, database technologies and information portals.</p>
       <div class="cta reveal" style="transition-delay:.18s">
         <a href="#contact" class="btn btn-primary">Talk to us</a>
         <a href="#services" class="btn btn-ghost">See what we do</a>
@@ -128,13 +141,13 @@
     <section id="services">
       <span class="kicker reveal">Services & Solutions</span>
       <h2 class="reveal" style="transition-delay:.06s">Built for the National Electricity Market (NEM)</h2>
-      <p class="reveal" style="transition-delay:.1s">Our services are designed for Australian energy market participants and data‑rich operations: focused on business process, real benefits, innovation, cost effectiveness and end‑user satisfaction.</p>
+      <p class="reveal" style="transition-delay:.1s">Our services are designed for Australian energy market participants and data-rich operations: focused on business process, real benefits, innovation, cost effectiveness and end-user satisfaction.</p>
       <div class="cards even-6" style="margin-top:18px">
-        <article class="card reveal" style="transition-delay:.06s"><h3>Consulting & Business Analysis</h3><p>Capture accurate requirements, design change strategies and de‑risk delivery through clear documentation and planning.</p></article>
+        <article class="card reveal" style="transition-delay:.06s"><h3>Consulting & Business Analysis</h3><p>Capture accurate requirements, design change strategies and de-risk delivery through clear documentation and planning.</p></article>
         <article class="card reveal" style="transition-delay:.1s"><h3>Software Development</h3><p>Modern engineering practices to implement robust systems for market data, settlements and operations.</p></article>
         <article class="card reveal" style="transition-delay:.14s"><h3>Business Intelligence</h3><p>Dashboards and analytics that surface insights from large energy datasets to inform rapid decisions.</p></article>
-        <article class="card reveal" style="transition-delay:.18s"><h3>Database Technologies</h3><p>Design, performance tuning and data interchange for mission‑critical platforms.</p></article>
-        <article class="card reveal" style="transition-delay:.22s"><h3>Information Portals</h3><p>Secure, user‑friendly portals for participants and stakeholders to access market information.</p></article>
+        <article class="card reveal" style="transition-delay:.18s"><h3>Database Technologies</h3><p>Design, performance tuning and data interchange for mission-critical platforms.</p></article>
+        <article class="card reveal" style="transition-delay:.22s"><h3>Information Portals</h3><p>Secure, user-friendly portals for participants and stakeholders to access market information.</p></article>
         <article class="card reveal" style="transition-delay:.26s"><h3>NEM Services</h3><p>Specialist capabilities for Australian National Electricity Market workflows and integration.</p></article>
       </div>
     </section>
@@ -150,7 +163,7 @@
           In Australia’s energy market
         </div>
         <div class="highlight reveal" style="transition-delay:.12s">
-          <span>End‑to‑end</span>
+          <span>End-to-end</span>
           Analysis → software → support
         </div>
         <div class="highlight reveal" style="transition-delay:.16s">
@@ -159,8 +172,8 @@
         </div>
       </div>
       <div class="cards two-col" style="margin-top:32px">
-        <article class="card reveal"><p>We believe successful software projects come from close collaboration and disciplined delivery. Our process covers requirements, documentation, risk management, change management, solution development and testing using best‑practice software engineering and project management.</p></article>
-        <article class="card reveal" style="transition-delay:.06s"><ul><li>Established 2003, focused on Australia’s energy industry</li><li>Deep experience across dispatch interfaces, billing & settlements, metering data and more</li><li>End‑to‑end capability from analysis to production support</li></ul></article>
+        <article class="card reveal"><p>We believe successful software projects come from close collaboration and disciplined delivery. Our process covers requirements, documentation, risk management, change management, solution development and testing using best-practice software engineering and project management.</p></article>
+        <article class="card reveal" style="transition-delay:.06s"><ul><li>Established 2003, focused on Australia’s energy industry</li><li>Deep experience across dispatch interfaces, billing & settlements, metering data and more</li><li>End-to-end capability from analysis to production support</li></ul></article>
       </div>
     </section>
 
@@ -212,7 +225,7 @@
       if(i < fullText.length){
         title.textContent += fullText.charAt(i);
         i++;
-        setTimeout(typeWriter, 80); // faster typing speed
+        setTimeout(typeWriter, 50); // faster typing speed
       }
     }
     window.addEventListener('load', typeWriter);
